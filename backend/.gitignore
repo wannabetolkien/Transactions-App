@@ -1,0 +1,6 @@
+#Ignore environment config files
+.env
+#Ignore node modules
+node_modules/
+#Ignore build output
+dist/
