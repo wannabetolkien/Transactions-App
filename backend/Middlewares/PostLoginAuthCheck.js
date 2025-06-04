@@ -1,5 +1,6 @@
 import jwt from 'jsonwebtoken';
 
+// Checking token hence post login checks for routes.
 function AuthCheck(req,res,next){
     const authHeader =  req.headers.authorization;
     if(!authHeader || !authHeader.startsWith('Bearer')){

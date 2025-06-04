@@ -2,6 +2,7 @@ import User from "../DB/Schemas.js";
 import SignInZod from "../ZodValidators/SignInZod.js";
 import bcrypt from "bcryptjs";
 
+// Middleware check for Logging in.
 async function LoginCheck(req,res,next){
     const parsedResult = SignInZod.safeParse(req.body);
 
