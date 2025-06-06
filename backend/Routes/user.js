@@ -2,10 +2,11 @@ import express from 'express';
 import SignUpCheck from '../Middlewares/SignUpCheck.js';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
-import User from '../DB/Schemas.js';
+import User from '../DB/userSchema.js';
 import LoginCheck from '../Middlewares/LoginCheck.js';
 import AuthCheck from '../Middlewares/PostLoginAuthCheck.js';
 import updateZod from '../ZodValidators/updateZod.js';
+import Account from '../DB/bankSchema.js';
 
 
 const userRouter = express.Router();
@@ -25,9 +26,9 @@ userRouter.post('/signup',SignUpCheck,async (req,res)=>{
 
         const id = newUser._id;
 
-        const token = jwt.sign({id},process.env.JWT_SECRET);
+        await Account.create({userID:id,balance:1+10000*Math.random()});
 
-        return res.status(201).json({message:"User created Succesfully",token:token});
+        return res.status(201).json({message:"User created Succesfully"});
     }
     catch(err){
         console.error(err);

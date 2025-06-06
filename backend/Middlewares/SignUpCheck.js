@@ -1,4 +1,4 @@
-import User from "../DB/Schemas.js";
+import User from "../DB/userSchema.js";
 import userZod from "../ZodValidators/UserZod.js";
 
 async function SignUpCheck(req,res,next){

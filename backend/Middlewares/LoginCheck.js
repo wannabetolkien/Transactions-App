@@ -1,4 +1,4 @@
-import User from "../DB/Schemas.js";
+import User from "../DB/userSchema.js";
 import SignInZod from "../ZodValidators/SignInZod.js";
 import bcrypt from "bcryptjs";
 
