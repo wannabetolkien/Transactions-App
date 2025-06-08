@@ -1,4 +1,4 @@
-# **PayTM-Clone: Full Stack Money Transfer App**
+# **Full Stack Money Transfer App**
 
 A simple full-stack application that allows users to sign up, log in, view their balance, search for users, and transfer money securely. Built with **React** (frontend), **Express.js**/**Node.js** (backend), **MongoDB** (database), and **Tailwind CSS** for styling.
 
