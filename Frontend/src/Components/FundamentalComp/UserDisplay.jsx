@@ -47,21 +47,32 @@ function UserDisplay() {
           ref={nameRef}
           type="text"
           placeholder="Search User"
-          className="w-full px-3 py-2 border rounded-md border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-4 py-3 border rounded-lg border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg"
         />
 
         <button
           onClick={() => setSearchCounter((prev) => prev + 1)}
-          className="bg-slate-300 rounded-sm px-4 py-2 ml-2 hover:bg-gray-900 hover:text-white transition duration-200"
+          className="bg-blue-600 rounded-lg px-6 py-3 ml-3 text-white font-semibold hover:bg-blue-800 transition duration-200 shadow"
         >
           Search
         </button>
       </div>
 
       <div>
-        {userArray.map((individualUser) => (
-          <User user={individualUser} key={individualUser._id} />
-        ))}
+        {userArray.length === 0 ? (
+          <div className="text-gray-500 mt-4">No users found.</div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mt-4">
+            {userArray.map((individualUser) => (
+              <div
+                key={individualUser._id}
+                className="w-full h-64 bg-white border border-slate-200 rounded-xl shadow-lg flex flex-col items-center justify-center p-4 transition-transform hover:scale-105"
+              >
+                <User user={individualUser} />
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
